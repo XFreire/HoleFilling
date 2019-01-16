@@ -12,7 +12,7 @@ typealias Coordinates = (x: Int, y: Int)
 struct Pixel {
     let x: Int
     let y: Int
-    let value: Float
+    var value: Float
 }
 
 extension Pixel {
@@ -22,4 +22,14 @@ extension Pixel {
         self.value = value
     }
 }
-extension Pixel: Hashable, Equatable {}
+
+extension Pixel {
+    var proxy: String {
+        return "\(x) \(y)"
+    }
+}
+extension Pixel: Hashable, Equatable {
+    static func == (lhs: Pixel, rhs: Pixel) -> Bool {
+        return lhs.proxy == rhs.proxy
+    }
+}
