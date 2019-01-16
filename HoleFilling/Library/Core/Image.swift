@@ -27,7 +27,7 @@ struct Image {
     private let width: Int
     private let height: Int
     private let pixelConnectivity: PixelConnectivity
-    private let matrix: ImageMatrix
+    private var matrix: ImageMatrix
     
     // MARK: Initialization
     init(matrix: ImageMatrix, pixelConnectivity: PixelConnectivity) throws {
@@ -126,5 +126,25 @@ struct Image {
         return holes
     }
     
-    
+    mutating func change(_ pixel: Pixel, with value: Float) {
+        let x = pixel.x
+        let y = pixel.y
+        
+        matrix[x][y] = value
+    }
+}
+
+extension Image: CustomStringConvertible {
+    var description: String {
+        var string = ""
+        for j in 0..<height {
+            string += "\n"
+            for i in 0..<width {
+                //string += String(format: "%2f", matrix[i][j])
+                string += "  \(matrix[i][j])"
+            }
+        }
+        
+        return string
+    }
 }

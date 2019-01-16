@@ -120,5 +120,24 @@ class ImageTests: XCTestCase {
         
         XCTAssertEqual(holes.count, 9)
     }
-
+    
+    func testImage_CreateThroughArray() {
+        let array = [1,2,3,4,5,6,7,8,9, 10, 11, 12]
+        let width = 3
+        let height = 4
+        var matrix = [[Int]]()
+        for _ in 0..<width {
+            matrix.append([])
+        }
+        
+        let sequence = stride(from: 0, to: array.count, by: width)
+        for i in 0..<width {
+            for j in sequence {
+                matrix[i].append(array[i+j])
+            }
+        }
+        
+        print(matrix)
+        XCTAssertTrue(true)
+    }
 }

@@ -14,7 +14,7 @@ final class Painter {
     private let calculator: WeightCalculator
     private let image: Image
     
-    private var holes: Pixels
+    //private var holes: Pixels
     private var borders: Pixels
     
     // MARK: Initialization
@@ -22,15 +22,17 @@ final class Painter {
         self.image = image
         self.calculator = calculator
         
-        holes = self.image.findHoles()
+        //holes = self.image.findHoles()
         borders = self.image.findHoleBorders()
     }
     
-//    func fillHoles() -> Image {
-//        let filledHoles = holes.map { $0.value = calculateColor(of: $0) }
-//        let image = self.image.clone(adding: filledHoles)
-//        return image 
-//    }
+    func imageWithFilledHoles() -> Image {
+        var imageCopy = self.image // Image is value type so it is copied
+        let holes = imageCopy.findHoles()
+        holes.forEach { imageCopy.change($0, with: calculateColor(of: $0)) }
+        
+        return imageCopy
+    }
     
     func calculateColor(of holePixel: Pixel) -> Float {
         var numerator: Float = 0

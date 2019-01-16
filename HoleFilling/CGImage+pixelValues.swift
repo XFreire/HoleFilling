@@ -14,7 +14,6 @@ extension CGImage {
         var width = 0
         var height = 0
         var pixelValues: [UInt8]?
-        
         width = self.width
         height = self.height
         let bitsPerComponent = self.bitsPerComponent
@@ -73,4 +72,32 @@ func image(fromPixelValues pixelValues: [UInt8]?, width: Int, height: Int) -> CG
     }
     
     return imageRef
+}
+
+extension CGImage {
+    func asbsd() {
+        let colorspace = CGColorSpaceCreateDeviceRGB()
+        let bytesPerPixel = 4;
+        let bytesPerRow = bytesPerPixel * width;
+        let bitsPerComponent = 8;
+        
+        
+        let pixels =  calloc(height * width, MemoryLayout<UInt32>.size)
+        
+        
+        var context = CGContext(data: pixels, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorspace, bitmapInfo: 0)
+        
+        context?.draw(self, in: CGRect(x: 0.0, y: 0.0, width: CGFloat(width), height: CGFloat(height)))
+
+        for x in 0..<width {
+            for y in 0..<height {
+                //Here is your raw pixels
+                let offset = 4*((Int(width) * Int(y)) + Int(x))
+                let alpha = pixels?[offset]
+                let red = pixels[offset+1]
+                let green = pixels[offset+2]
+                let blue = pixels[offset+3]
+            }
+        }
+    }
 }

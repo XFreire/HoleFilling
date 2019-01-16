@@ -40,7 +40,7 @@ public extension UIImage {
                                 bitsPerComponent: self.cgImage!.bitsPerComponent,
                                 bytesPerRow: 4 * Int(size.width),
                                 space: colorSpace,
-                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
+                                bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
         guard let cgImage = self.cgImage else { return nil }
         context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
