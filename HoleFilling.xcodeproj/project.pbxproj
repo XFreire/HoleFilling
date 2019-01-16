@@ -13,6 +13,8 @@
 		AC3D96A021EE6A47003A7D53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D969F21EE6A47003A7D53 /* Constants.swift */; };
 		AC3D96A221EE6EE2003A7D53 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D96A121EE6EE2003A7D53 /* Pixel.swift */; };
 		AC3D96A421EE6FEA003A7D53 /* PixelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D96A321EE6FEA003A7D53 /* PixelTests.swift */; };
+		AC3D96A621EF11E9003A7D53 /* WeightCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D96A521EF11E9003A7D53 /* WeightCalculator.swift */; };
+		AC3D96A821EF142B003A7D53 /* WeightCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D96A721EF142B003A7D53 /* WeightCalculatorTests.swift */; };
 		AC4E2BAC21EDE854009E14DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E2BAB21EDE854009E14DC /* AppDelegate.swift */; };
 		AC4E2BAE21EDE854009E14DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E2BAD21EDE854009E14DC /* ViewController.swift */; };
 		AC4E2BB121EDE854009E14DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4E2BAF21EDE854009E14DC /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		AC3D969F21EE6A47003A7D53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC3D96A121EE6EE2003A7D53 /* Pixel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
 		AC3D96A321EE6FEA003A7D53 /* PixelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelTests.swift; sourceTree = "<group>"; };
+		AC3D96A521EF11E9003A7D53 /* WeightCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightCalculator.swift; sourceTree = "<group>"; };
+		AC3D96A721EF142B003A7D53 /* WeightCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightCalculatorTests.swift; sourceTree = "<group>"; };
 		AC4E2BA821EDE854009E14DC /* HoleFilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HoleFilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4E2BAB21EDE854009E14DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC4E2BAD21EDE854009E14DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 				AC3D969B21EE65E5003A7D53 /* Image.swift */,
 				AC3D96A121EE6EE2003A7D53 /* Pixel.swift */,
 				AC3D969F21EE6A47003A7D53 /* Constants.swift */,
+				AC3D96A521EF11E9003A7D53 /* WeightCalculator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 				AC4E2BC221EDE858009E14DC /* Info.plist */,
 				AC3D969D21EE67E9003A7D53 /* ImageTests.swift */,
 				AC3D96A321EE6FEA003A7D53 /* PixelTests.swift */,
+				AC3D96A721EF142B003A7D53 /* WeightCalculatorTests.swift */,
 			);
 			path = HoleFillingTests;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				AC3D969721EDFC8B003A7D53 /* CGImage+pixelValues.swift in Sources */,
 				AC4E2BCC21EDE86F009E14DC /* UIImage+pixelData.swift in Sources */,
 				AC3D96A021EE6A47003A7D53 /* Constants.swift in Sources */,
+				AC3D96A621EF11E9003A7D53 /* WeightCalculator.swift in Sources */,
 				AC4E2BAE21EDE854009E14DC /* ViewController.swift in Sources */,
 				AC4E2BAC21EDE854009E14DC /* AppDelegate.swift in Sources */,
 			);
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC3D96A821EF142B003A7D53 /* WeightCalculatorTests.swift in Sources */,
 				AC3D96A421EE6FEA003A7D53 /* PixelTests.swift in Sources */,
 				AC3D969E21EE67E9003A7D53 /* ImageTests.swift in Sources */,
 			);
