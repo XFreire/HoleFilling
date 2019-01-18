@@ -28,22 +28,44 @@ extension UIImage {
     }
 }
 
-public extension UIImage {
-    func pixelData() -> [Float]? {
+extension UIImage {
+    func pixelData() -> [UInt8]? {
         let size = self.size
         let dataSize = size.width * size.height * 4
         var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
-        let colorSpace = CGColorSpaceCreateDeviceGray()
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
         let context = CGContext(data: &pixelData,
                                 width: Int(size.width),
                                 height: Int(size.height),
-                                bitsPerComponent: self.cgImage!.bitsPerComponent,
+                                bitsPerComponent: 8,
                                 bytesPerRow: 4 * Int(size.width),
                                 space: colorSpace,
-                                bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+                                bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue)
         guard let cgImage = self.cgImage else { return nil }
         context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
         
-        return pixelData.map{ Float($0) / 255.0 }
+        return pixelData
     }
 }
+//
+//public extension UIImage {
+//    func pixelData() -> [Float]? {
+//        let size = self.size
+//        let dataSize = size.width * size.height * 4
+//        var pixelData = [UInt8](repeating: 0, count: Int(dataSize))
+//        let colorSpace = CGColorSpaceCreateDeviceGray()
+//        let context = CGContext(data: &pixelData,
+//                                width: Int(size.width),
+//                                height: Int(size.height),
+//                                bitsPerComponent: self.cgImage!.bitsPerComponent,
+//                                bytesPerRow: 4 * Int(size.width),
+//                                space: colorSpace,
+//                                bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+//        guard let cgImage = self.cgImage else { return nil }
+//        context?.draw(cgImage, in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+//        
+//        return pixelData.map{ Float($0) / 255.0 }
+//    }
+//}
+
+

@@ -34,7 +34,7 @@ final class Painter {
         return imageCopy
     }
     
-    func calculateColor(of holePixel: Pixel) -> Float {
+    private func calculateColor(of holePixel: Pixel) -> Float {
         var numerator: Float = 0
         var denominator: Float = 0
         

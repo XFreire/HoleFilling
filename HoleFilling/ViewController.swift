@@ -17,25 +17,37 @@ class ViewController: UIViewController {
         
         let originalImage =  UIImage(named: "Food_4.JPG")!
         let imageResized = originalImage.resizeImage(newWidth: 200)
-        
+    
         let noirImage = imageResized.noir!
         print(" \(noirImage.size.width) x \(noirImage.size.height)")
-        
+     
+        let pixels = noirImage.pixelData()
+        print(pixels?.count)
         let imgView = UIImageView(frame: view.frame)
         imgView.contentMode = .scaleAspectFit
         imgView.image = noirImage
         view.addSubview(imgView)
         
-        let pixels = noirImage.cgImage?.pixelValues()
-        print("\(200*150) == \(pixels!.pixelValues?.count)")
-        print("Height \(pixels!.height)")
-        print("Width \(pixels!.width)")
+        let cgImage = image(fromPixelValues: pixels, width: Int(noirImage.size.width), height: Int(noirImage.size.height))!
+        print("Height \(cgImage.height)")
+        print("Width \(cgImage.width)")
+        imgView.image = UIImage(cgImage: cgImage)
         
-        let mat = matrix(from: pixels!.pixelValues!, width: pixels!.width)
-        print(mat[0].count)
+        //let pixels = pixelValues(fromCGImage: noirImage.cgImage!)
         
-        let cgImage = image(fromPixelValues: pixels!.pixelValues, width: pixels!.width, height: pixels!.height)
-        imgView.image = UIImage(cgImage: cgImage!)
+//        print("\(200*150) == \(pixels.pixelValues?.count)")
+//        print("Height \(pixels.height)")
+//        print("Width \(pixels.width)")
+        
+//        let mat = matrix(from: pixels.pixelValues!, width: pixels.width)
+//        print(mat[0].count)
+        
+//        let cgImage = image(fromPixelValues: pixels.pixelValues, width: pixels.width, height: pixels.height)!
+//        print("Height \(cgImage.height)")
+//        print("Width \(cgImage.width)")
+        //imgView.image = UIImage(cgImage: cgImage)
+        
+        
         //pixels?.pixelValues.forEach{ print($0) }
         
 //        let pixels = image.pixelValues()

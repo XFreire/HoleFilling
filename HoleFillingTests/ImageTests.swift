@@ -122,10 +122,10 @@ class ImageTests: XCTestCase {
     }
     
     func testImage_CreateThroughArray() {
-        let array = [1,2,3,4,5,6,7,8,9, 10, 11, 12]
+        let array: [Float] = [1,2,3,4,5,6,7,8,9, 10, 11, 12]
         let width = 3
         let height = 4
-        var matrix = [[Int]]()
+        var matrix = [[Float]]()
         for _ in 0..<width {
             matrix.append([])
         }
@@ -136,8 +136,9 @@ class ImageTests: XCTestCase {
                 matrix[i].append(array[i+j])
             }
         }
-        
-        print(matrix)
+        let img = try! Image(matrix: matrix, pixelConnectivity: .four)
+    
+        print(img)
         XCTAssertTrue(true)
     }
 }

@@ -24,8 +24,8 @@ enum ImageError: Error {
 struct Image {
     
     // MARK: Properties
-    private let width: Int
-    private let height: Int
+    let width: Int
+    let height: Int
     private let pixelConnectivity: PixelConnectivity
     private var matrix: ImageMatrix
     
