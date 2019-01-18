@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC3D969721EDFC8B003A7D53 /* CGImage+pixelValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D969621EDFC8B003A7D53 /* CGImage+pixelValues.swift */; };
 		AC3D969C21EE65E5003A7D53 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D969B21EE65E5003A7D53 /* Image.swift */; };
 		AC3D969E21EE67E9003A7D53 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D969D21EE67E9003A7D53 /* ImageTests.swift */; };
 		AC3D96A021EE6A47003A7D53 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC3D969F21EE6A47003A7D53 /* Constants.swift */; };
@@ -24,9 +23,6 @@
 		AC4E2BB121EDE854009E14DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4E2BAF21EDE854009E14DC /* Main.storyboard */; };
 		AC4E2BB321EDE858009E14DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4E2BB221EDE858009E14DC /* Assets.xcassets */; };
 		AC4E2BB621EDE858009E14DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4E2BB421EDE858009E14DC /* LaunchScreen.storyboard */; };
-		AC4E2BCC21EDE86F009E14DC /* UIImage+pixelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E2BCB21EDE86F009E14DC /* UIImage+pixelData.swift */; };
-		AC4E2BCE21EDE876009E14DC /* Food_4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AC4E2BCD21EDE876009E14DC /* Food_4.JPG */; };
-		AC4E2BD021EDE9A4009E14DC /* GrayScaleImageConversor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E2BCF21EDE9A4009E14DC /* GrayScaleImageConversor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AC3D969621EDFC8B003A7D53 /* CGImage+pixelValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImage+pixelValues.swift"; sourceTree = "<group>"; };
 		AC3D969B21EE65E5003A7D53 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		AC3D969D21EE67E9003A7D53 /* ImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 		AC3D969F21EE6A47003A7D53 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -61,9 +56,6 @@
 		AC4E2BB721EDE858009E14DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC4E2BBC21EDE858009E14DC /* HoleFillingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HoleFillingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4E2BC221EDE858009E14DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AC4E2BCB21EDE86F009E14DC /* UIImage+pixelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+pixelData.swift"; sourceTree = "<group>"; };
-		AC4E2BCD21EDE876009E14DC /* Food_4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Food_4.JPG; sourceTree = "<group>"; };
-		AC4E2BCF21EDE9A4009E14DC /* GrayScaleImageConversor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayScaleImageConversor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				AC3D969821EE33A3003A7D53 /* Library */,
-				AC4E2BCD21EDE876009E14DC /* Food_4.JPG */,
 				AC4E2BAB21EDE854009E14DC /* AppDelegate.swift */,
 				AC4E2BAD21EDE854009E14DC /* ViewController.swift */,
-				AC4E2BCB21EDE86F009E14DC /* UIImage+pixelData.swift */,
-				AC3D969621EDFC8B003A7D53 /* CGImage+pixelValues.swift */,
-				AC4E2BCF21EDE9A4009E14DC /* GrayScaleImageConversor.swift */,
 				AC4E2BAF21EDE854009E14DC /* Main.storyboard */,
 				AC4E2BB221EDE858009E14DC /* Assets.xcassets */,
 				AC4E2BB421EDE858009E14DC /* LaunchScreen.storyboard */,
@@ -244,7 +232,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC4E2BCE21EDE876009E14DC /* Food_4.JPG in Resources */,
 				AC4E2BB621EDE858009E14DC /* LaunchScreen.storyboard in Resources */,
 				AC4E2BB321EDE858009E14DC /* Assets.xcassets in Resources */,
 				AC4E2BB121EDE854009E14DC /* Main.storyboard in Resources */,
@@ -267,10 +254,7 @@
 			files = (
 				AC3D96A221EE6EE2003A7D53 /* Pixel.swift in Sources */,
 				AC3D96AA21EF1DED003A7D53 /* Painter.swift in Sources */,
-				AC4E2BD021EDE9A4009E14DC /* GrayScaleImageConversor.swift in Sources */,
 				AC3D969C21EE65E5003A7D53 /* Image.swift in Sources */,
-				AC3D969721EDFC8B003A7D53 /* CGImage+pixelValues.swift in Sources */,
-				AC4E2BCC21EDE86F009E14DC /* UIImage+pixelData.swift in Sources */,
 				AC3D96C021F075E1003A7D53 /* HoleFiller.swift in Sources */,
 				AC3D96A021EE6A47003A7D53 /* Constants.swift in Sources */,
 				AC3D96A621EF11E9003A7D53 /* WeightCalculator.swift in Sources */,

@@ -124,7 +124,6 @@ class ImageTests: XCTestCase {
     func testImage_CreateThroughArray() {
         let array: [Float] = [1,2,3,4,5,6,7,8,9, 10, 11, 12]
         let width = 3
-        let height = 4
         var matrix = [[Float]]()
         for _ in 0..<width {
             matrix.append([])

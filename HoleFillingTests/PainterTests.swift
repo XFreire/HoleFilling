@@ -12,6 +12,7 @@ import XCTest
 class PainterTests: XCTestCase {
 
     var image: Image!
+    var imageWithHoles: Image!
     var calculator: WeightCalculator!
     var painter: Painter!
     
@@ -19,10 +20,11 @@ class PainterTests: XCTestCase {
     let holeRow: [Float] = [0.184, -1, -1, -1, 0.162]
     
     override func setUp() {
-        let matrix = [fullRow, fullRow, holeRow, holeRow, holeRow, fullRow, fullRow]
+        let matrix = [fullRow, fullRow, fullRow, fullRow, fullRow, fullRow, fullRow]
         image = try! Image(matrix: matrix, pixelConnectivity: .four)
         calculator = try! WeightCalculator()
-        painter = Painter(image: image, calculator: calculator)
+        painter = Painter(calculator: calculator)
+        imageWithHoles = painter.addHoles(to: image)
     }
 
     override func tearDown() {
@@ -33,12 +35,21 @@ class PainterTests: XCTestCase {
         XCTAssertNotNil(painter)
     }
     
-    func testPainter_ImageWithFilledHoles_ReturnsAnImageWithFilledHoles() {
-        var pixelValue = self.image.pixel(at: (3, 2))?.value
+    func testPainter_AddHoles_ReturnsAnImageWithHoles() {
+        let holes = imageWithHoles.findHoles()
+        print(imageWithHoles)
+        XCTAssertFalse(holes.isEmpty)
+        XCTAssertEqual(holes.count, 8)
+        let pixelValue = imageWithHoles.pixel(at: (3, 2))?.value
+        XCTAssertEqual(pixelValue, -1)
+    }
+    
+    func testPainter_FillHoles_ReturnsAnImageWithFilledHoles() {
+        var pixelValue = imageWithHoles.pixel(at: (3, 2))?.value
         XCTAssertEqual(pixelValue, -1)
         
-        let imageFilled = painter.imageWithFilledHoles()
-        print(image)
+        let imageFilled = painter.fillHoles(to: imageWithHoles)
+        print(imageWithHoles)
         print()
         print(imageFilled)
         

@@ -15,24 +15,19 @@ protocol HoleFillerProtocol {
 
 final class HoleFiller: HoleFillerProtocol {
 
+    // MARK: Properties
+    private let painter: PainterProtocol
+    
+    // MARK: Initialization
+    init(painter: PainterProtocol) {
+        self.painter = painter
+    }
+    
     func addHoles(to image: Image) -> Image {
-        var theImage = image
-        let width = image.width
-        let height = image.height
-        
-        for i in (width/4)..<(3*width/4) {
-            for j in (height/4)..<(3*height/4) {
-                if let pixel = theImage.pixel(at: (i, j))  {
-                    theImage.change(pixel, with: -1)
-                }
-            }
-        }
-        
-        return theImage
+        return painter.addHoles(to: image)
     }
     
     func fillHoles(in image: Image) -> Image {
-        let painter = Painter(image: image)
-        return painter.imageWithFilledHoles()
+        return painter.fillHoles(to: image)
     }
 }

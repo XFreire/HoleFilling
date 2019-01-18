@@ -18,9 +18,9 @@ class HoleFillerTests: XCTestCase {
     override func setUp() {
         let matrix = [ column, column, column, column ]
         image = try! Image(matrix: matrix, pixelConnectivity: .four)
-        let painter = Painter(image: image)
+        let painter = Painter()
         
-        filler = HoleFiller()
+        filler = HoleFiller(painter: painter)
         
         imageWithHoles = filler.addHoles(to: image)
     }
