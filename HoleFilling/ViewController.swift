@@ -17,11 +17,12 @@ class ViewController: UIViewController {
     }
 
     func script() {
+        // Create objects and dependencies
         let calculator = try! WeightCalculator()
         let painter = Painter(calculator: calculator)
         let filler = HoleFiller(painter: painter)
 
-        let image = createImage(width: 8, height: 8)
+        let image = createRandomImage(width: 8, height: 8)
         print("---- ORIGINAL ----")
         print(image)
         print()
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         print()
     }
 
-    func createImage(width: Int, height: Int) -> Image {
+    func createRandomImage(width: Int, height: Int) -> Image {
         var array = [Float]()
         let total = (width*height)
         for _ in 0..<total {
