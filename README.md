@@ -50,5 +50,14 @@ let imageWithFilledHoles = filler.fillHoles(in: imageWithHoles)
 ```
 ![](filled.png)
 
+## Questions 
 
+### If there are m boundary pixels and n pixels inside the hole, what’s the complexity of the algorithm that fills the hole, assuming that the hole and boundary were already found? Try to also express the complexity only in terms of n . 
+
+- O(n*m) 
+- O(n*√n) 
+
+### Describe an algorithm that approximates the result in O(n) to a high degree of accuracy. As a bonus, implement the suggested algorithm in your library in addition to the algorithm described above.  
+
+- Do not use all of the boundary pixels. Instead, use only the pixels that are connected based on the `pixelConnectivity` value. 
 
