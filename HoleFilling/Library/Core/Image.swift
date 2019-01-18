@@ -45,7 +45,7 @@ struct Image {
         for i in 0..<width {
             for j in 0..<height {
                 let value = matrix[i][j]
-                let range = LEFT_VALID_VALUE...RIGHT_VALID_VALUE
+                let range = MIN_VALID_VALUE...MAX_VALID_VALUE
                 if !range.contains(value) && value != -1 {
                     return false
                 }
