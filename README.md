@@ -59,5 +59,5 @@ let imageWithFilledHoles = filler.fillHoles(in: imageWithHoles)
 
 ### Describe an algorithm that approximates the result in O(n) to a high degree of accuracy. As a bonus, implement the suggested algorithm in your library in addition to the algorithm described above.  
 
-- Do not use all of the boundary pixels. Instead, use only the pixels that are connected based on the `pixelConnectivity` value. 
+- Do not use all of the boundary pixels per hole pixel. Instead, use only the pixels that are connected based on the `pixelConnectivity` value. 
 
