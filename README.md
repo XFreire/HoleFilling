@@ -7,9 +7,7 @@ The library must support filling holes in grayscale images, where each pixel val
 The library should provide the ability to fill a hole in an 
 
 ## Objects and dependencies
-<p align="center">
-  <img src=“Objects.png”>
-</p>
+![](Objects.png)
 
 - `Image`
 - `Pixel`
@@ -31,9 +29,8 @@ let filler = HoleFiller(painter: painter)
 let image = createRandomImage(width: 8, height: 8)
 ```
 
-<p align="center">
-  <img src=“original.png”>
-</p>
+![](original.png)
+
 
 
 ### 2. Add holes to random image:
@@ -43,9 +40,7 @@ let image = createRandomImage(width: 8, height: 8)
 let imageWithHoles = filler.addHoles(to: image)
 ```
 
-<p align="center">
-  <img src=“holes.png”>
-</p>
+![](holes.png)
 
 ### 3. Fill holes
 
@@ -53,9 +48,7 @@ let imageWithHoles = filler.addHoles(to: image)
 // Fill holes 
 let imageWithFilledHoles = filler.fillHoles(in: imageWithHoles)
 ```
-<p align="center">
-  <img src=“filled.png”>
-</p>
+![](filled.png)
 
 
 
